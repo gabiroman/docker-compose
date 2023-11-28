@@ -22,11 +22,16 @@ pipeline {
         sh 'docker compose ps'
       }
     }
+    stage('Run tests against the container') {
+      steps {
+        sh 'curl http://localhost:8082'
+      }
+    }
   }
-  // post {
-  //   always {
-  //     sh 'docker compose down --remove-orphans -v'
-  //     sh 'docker compose ps'
-  //   }
-  // }
+  post {
+    always {
+      sh 'docker compose down --remove-orphans -v'
+      sh 'docker compose ps'
+    }
+  }
 }
