@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  # The Server
+  nginx:
+    image: nginx:1.25.3-alpine
+    ports:
+      - "8082:80"
