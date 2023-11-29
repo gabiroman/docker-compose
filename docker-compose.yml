@@ -5,4 +5,4 @@ services:
   nginx:
     image: nginx:1.25.3-alpine
     ports:
-      - "8089:80"
+      - "8088:80"
